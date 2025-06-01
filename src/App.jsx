@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './pages/login';
-import Register from './pages/register';
-import Resources from './pages/resources';
-import Contact from './pages/contact';
-import About from './pages/about';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Resources from './pages/Resources';
+import Contact from './pages/Contact';
+import About from './pages/About';
 
-import Home from './pages/home';
+import Home from './pages/Home';
 
 // import EnrollExams from '/pages/EnrollExams';
-import Rewards from './pages/rewards';
+import Rewards from './pages/Rewards';
 // import CheckResults from './pages/CheckResults';
 import PastExams from './Pages/PastExams';
 // import CardLayout from '/pages/Exams';
