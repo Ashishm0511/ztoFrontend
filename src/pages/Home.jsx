@@ -13,7 +13,6 @@ const Home = () => {
      <HeroCarousel/>
      <ExamSection/>
      <MissionSection/>
-     
      <OurTeams/>
      <Footer/>
 
