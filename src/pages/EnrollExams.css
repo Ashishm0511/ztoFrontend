@@ -1,167 +1,188 @@
+/* ---------- Global Reset & Variables ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #6A0DAD;
+  --text-dark: #333;
+  --text-light: #666;
+  --bg-card: #ffffff;
+  --badge-open-bg: #e6fffa;
+  --badge-open-text: #38b2ac;
+  --badge-fast-bg: #fffaf0;
+  --badge-fast-text: #dd6b20;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f9f9fb;
+  line-height: 1.5;
+  color: var(--text-dark);
+}
+
+/* ---------- Container ---------- */
 .enroll-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: 'Inter', sans-serif;
+  max-width: 800px;
+  margin-inline: auto;
+  padding: 2rem 1.5rem;
+  position: relative; /* back button anchor */
+}
+
+/* ---------- Header ---------- */
+.enroll-header {
+  margin-block-end: 3rem;
+  text-align: center;
+}
+
+.back-button {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: 1rem;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.enroll-header h1 {
+  font-size: clamp(1.75rem, 5vw, 2rem);
+  color: var(--primary);
+  margin-block-end: 0.5rem;
+}
+
+.enroll-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+/* ---------- Exam List ---------- */
+.exam-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ---------- Exam Card ---------- */
+.exam-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid #eee;
+}
+
+/* Card Header */
+.exam-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.exam-card .card-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-badge.open {
+  background: var(--badge-open-bg);
+  color: var(--badge-open-text);
+}
+
+.status-badge.filling-fast {
+  background: var(--badge-fast-bg);
+  color: var(--badge-fast-text);
+}
+
+/* Exam Details Grid */
+.exam-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-block-end: 1.5rem;
+}
+
+.detail-label {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.detail-value {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* Description */
+.exam-description {
+  color: #444;
+  line-height: 1.6;
+  margin-block-end: 1.5rem;
+}
+
+/* Modules */
+.modules-section h3 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-block-end: 1rem;
+}
+
+.modules-list {
+  list-style: none;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+}
+
+.modules-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block-end: 0.5rem;
+}
+
+.module-icon {
+  color: var(--primary);
+}
+
+/* Enroll Button */
+.enroll-button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.enroll-button:is(:hover, :focus-visible) {
+  background: #5a0a9d;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .enroll-container {
+    padding: 1.5rem 1rem;
   }
-  
-  /* ===== HEADER ===== */
-  .enroll-header {
-    margin-bottom: 3rem;
-    text-align: center;
-  }
-  
-  .back-button {
-    position: absolute;
-    left: 2rem;
-    top: 2rem;
-    background: none;
-    border: none;
-    color: #6A0DAD;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  
-  .header-content h1 {
-    font-size: 2rem;
-    color: #6A0DAD;
-    margin-bottom: 0.5rem;
-  }
-  
-  .header-content p {
-    color: #666;
-    font-size: 1.1rem;
-  }
-  
-  /* ===== EXAM CARD ===== */
-  .exam-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .exam-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid #eee;
-  }
-  
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .card-header h2 {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 0;
-  }
-  
-  .status-badge {
-    padding: 0.35rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-  
-  .status-badge.open {
-    background: #e6fffa;
-    color: #38b2ac;
-  }
-  
-  .status-badge.filling-fast {
-    background: #fffaf0;
-    color: #dd6b20;
-  }
-  
-  /* Exam Details */
-  .exam-details {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .detail-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .detail-label {
-    color: #666;
-    font-weight: 500;
-  }
-  
-  .detail-value {
-    color: #333;
-    font-weight: 600;
-  }
-  
-  /* Description */
-  .exam-description {
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Modules List */
-  .modules-section h3 {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 1rem;
-  }
-  
-  .modules-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem 0;
-  }
-  
-  .modules-list li {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  .module-icon {
-    color: #6A0DAD;
-    margin-right: 0.5rem;
-  }
-  
-  /* Enroll Button */
-  .enroll-button {
-    width: 100%;
-    padding: 1rem;
-    background: #6A0DAD;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  
-  .enroll-button:hover {
-    background: #5a0a9d;
-  }
-  
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    .enroll-container {
-      padding: 1.5rem;
-    }
-    
-    .card-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    
-    .status-badge {
-      align-self: flex-start;
-    }
-  }
+}

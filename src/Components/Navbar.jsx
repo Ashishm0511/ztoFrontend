@@ -1,5 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+
+import { useNavigate, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,6 +31,18 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate("/login");
+  };
+
+  const handleLogout = (e) =>
+{
+      e.preventDefault();
+      localStorage.removeItem("email");
+  }
 
   return (
     <nav className={`navbar ${isOpen ? 'open' : ''} ${scrolled ? 'scrolled' : ''}`}>
@@ -42,16 +57,17 @@ const Navbar = () => {
       </div>
 
       <ul className="navbar-links">
-        <li><a href="/" onClick={closeMenu}>Home</a></li>
-        <li><a href="/about" onClick={closeMenu}>About</a></li>
-        <li><a href="/exams" onClick={closeMenu}>Exams</a></li>
-        <li><a href="/resources" onClick={closeMenu}>Resources</a></li>
-        <li><a href="/contact" onClick={closeMenu}>Contact</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/exams">Exams</Link></li>
+        <li><Link to="/resources">Resources</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
 
       <div className="navbar-buttons">
-        <button className="login-btn">Login</button>
-        <button className="getstarted-btn">Get Started</button>
+
+        <button className="login-btn" onClick={handleLogin}>Login</button>
+        <button className="getstarted-btn" onClick={handleLogout}> logout</button>
       </div>
     </nav>
   );

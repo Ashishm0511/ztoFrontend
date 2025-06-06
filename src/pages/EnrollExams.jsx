@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EnrollExams.css';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const EnrollExams = () => {
   const navigate = useNavigate();
@@ -41,6 +43,8 @@ const EnrollExams = () => {
   ];
 
   return (
+    <>
+    <Navbar />
     <div className="enroll-container">
       {/* Header Section */}
       <header className="enroll-header">
@@ -99,6 +103,9 @@ const EnrollExams = () => {
         ))}
       </div>
     </div>
+    <Footer />
+    </>
+    
   );
 };
 
