@@ -18,7 +18,7 @@ import PrivateComponent from './pages/privateComponent';
 
 
 // import CheckResults from './pages/CheckResults';
-import Exams from './pages/Exams';
+import CardLayout from './pages/Exams';
 
 
 function App() {
@@ -31,11 +31,11 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           
-          <Route element={<PrivateComponent />}>
+          {/* <Route element={<PrivateComponent />}> */}
 
             <Route path="/" element={<Home />} />
             <Route path="/resources" element={<Resources />} />
-            {/* <Route path="/exams" element={<CardLayout/>} /> */}
+            <Route path="/exams" element={<CardLayout/>} />
             <Route path="/pastexams" element={<PastExams />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
@@ -43,7 +43,7 @@ function App() {
             <Route path="/rewards" element={<Rewards />} />
             {/* <Route path="/check-results" element={<CheckResults />} /> */}
             
-          </Route>
+          {/* </Route> */}
 
         </Routes>
       </Router>
