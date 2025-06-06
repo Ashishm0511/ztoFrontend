@@ -7,103 +7,96 @@ import Footer from '../Components/Footer';
 const EnrollExams = () => {
   const navigate = useNavigate();
 
-  const exams = [
-    {
-      id: 1,
-      title: "Full Stack Web Developer Certification",
-      date: "November 15, 2023 • 10:00 AM - 12:00 PM",
-      fee: "$120",
-      seats: "32/50 seats remaining",
-      status: "Open",
-      description: "Comprehensive exam covering both front-end and back-end development skills for modern web applications.",
-      modules: [
-        "HTML5 & CSS3 Fundamentals",
-        "JavaScript (ES6+)",
-        "React.js & Redux",
-        "Node.js & Express",
-        "Database Integration"
-      ]
-    },
-    {
-      id: 2,
-      title: "Data Science Professional Exam",
-      date: "December 5, 2023 • 2:00 PM - 5:00 PM",
-      fee: "$150",
-      seats: "45/60 seats remaining",
-      status: "Filling Fast",
-      description: "Validate your data analysis and machine learning skills with this industry-recognized certification.",
-      modules: [
-        "Python Programming",
-        "Pandas & NumPy",
-        "Data Visualization",
-        "Machine Learning Basics",
-        "Statistical Analysis"
-      ]
-    }
-  ];
+  const inputStyle = {
+    width: "100%",
+    padding: "10px",
+    marginBottom: "15px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
+    fontSize: "1rem",
+  };
+  
 
   return (
     <>
-    <Navbar />
-    <div className="enroll-container">
-      {/* Header Section */}
-      <header className="enroll-header">
-        <button onClick={() => navigate(-1)} className="back-button">
-          ← Back to Dashboard
-        </button>
-        <div className="header-content">
-          <h1>Exam Enrollment Portal</h1>
-          <p>Register for upcoming certification programs</p>
+      <Navbar />
+      
+      <div className="enroll-exams-container">
+          
+      <div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "80vh", // enough height for vertical centering
+    backgroundColor: "#f7f8fa", // optional background
+  }}
+>
+  <form
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      padding: "30px",
+      borderRadius: "10px",
+      backgroundColor: "#ffffff",
+      boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+      width: "100%",
+      maxWidth: "400px",
+    }}
+  >
+    <h2 style={{ marginBottom: "20px", color: "#2a4d8f" }}>
+      Student Exam Registration
+    </h2>
+
+    <input
+      type="text"
+      placeholder="Enter your name"
+      style={inputStyle}
+    />
+    <input
+      type="text"
+      placeholder="Enter your class"
+      style={inputStyle}
+    />
+    <input
+      type="email"
+      placeholder="Enter your email"
+      style={inputStyle}
+    />
+    <input
+      type="text"
+      placeholder="Enter your roll number"
+      style={inputStyle}
+    />
+    <select style={inputStyle}>
+      <option value="">Select Subject</option>
+      <option value="maths">Mathematics</option>
+      <option value="science">Science</option>
+      <option value="english">English</option>
+      <option value="computers">Computer Science</option>
+    </select>
+
+    <button
+      type="submit"
+      style={{
+        marginTop: "10px",
+        padding: "10px 20px",
+        border: "none",
+        backgroundColor: "#2a4d8f",
+        color: "white",
+        borderRadius: "5px",
+        cursor: "pointer",
+        fontSize: "1rem",
+      }}
+    >
+      Register
+    </button>
+  </form>
+</div>
+ 
         </div>
-      </header>
-
-      {/* Exams List */}
-      <div className="exam-list">
-        {exams.map((exam) => (
-          <div key={exam.id} className="exam-card">
-            <div className="card-header">
-              <h2>{exam.title}</h2>
-              <span className={`status-badge ${exam.status.replace(' ', '-').toLowerCase()}`}>
-                {exam.status}
-              </span>
-            </div>
-
-            <div className="exam-details">
-              <div className="detail-row">
-                <span className="detail-label">📅 Date & Time</span>
-                <span className="detail-value">{exam.date}</span>
-              </div>
-              <div className="detail-row">
-                <span className="detail-label">💵 Examination Fee</span>
-                <span className="detail-value">{exam.fee}</span>
-              </div>
-              <div className="detail-row">
-                <span className="detail-label">👥 Available Seats</span>
-                <span className="detail-value">{exam.seats}</span>
-              </div>
-            </div>
-
-            <div className="exam-description">
-              <p>{exam.description}</p>
-            </div>
-
-            <div className="modules-section">
-              <h3>Exam Modules:</h3>
-              <ul className="modules-list">
-                {exam.modules.map((module, index) => (
-                  <li key={index}>
-                    <span className="module-icon">▸</span> {module}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <button className="enroll-button">Enroll Now</button>
-          </div>
-        ))}
-      </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
     
   );

@@ -9,7 +9,32 @@ const Exams = () => {
   return (
     <>
       <Navbar />
+     
+       
+      <div className="card-row">
+        {/* Enroll Exams Card */}
+        <div 
+          className="small-card enroll-card"
+          onClick={() => navigate('/enroll-exams')}
+        >
+          <div className="card-icon">📝</div>
+          <h3>Upcoming exams</h3>
+          <p>know all upcoming exams from ZTO </p>
+          <button 
+            className="card-button"
+            onClick={(e) => {
+              e.stopPropagation();
+              navigate('/UpcomingExams'); // Assuming you have a route for upcoming exams
+            }}
+          >
+            Check Now
+          </button>
+        </div>
+        </div>
+
+      
     <div className="card-container">
+      
       <div className="card-row">
         {/* Enroll Exams Card */}
         <div 
@@ -33,7 +58,7 @@ const Exams = () => {
         {/* Rewards Card */}
         <div 
           className="small-card rewards-card"
-          onClick={() => navigate('/rewards')}
+          // onClick={() => navigate('/rewards')}
         >
           <div className="card-icon">🏆</div>
           <h3>Your Rewards</h3>
@@ -50,29 +75,13 @@ const Exams = () => {
         </div>
         
         {/* Results Card */}
-        <div 
-          className="small-card results-card"
-          onClick={() => navigate('/check-results')}
-        >
-          <div className="card-icon">📊</div>
-          <h3>Check Results</h3>
-          <p>Access your examination results with detailed performance analysis</p>
-          <button 
-            className="card-button"
-            onClick={(e) => {
-              e.stopPropagation();
-              navigate('/check-results');
-            }}
-          >
-            Check Now
-          </button>
-        </div>
+       
       </div>
       
       {/* Past Exams Card */}
       <div 
         className="full-width-card"
-        onClick={() => navigate('/past-exams')}
+        // onClick={() => navigate('/past-exams')}
       >
         <div className="full-card-content">
           <div className="full-card-text">

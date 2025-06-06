@@ -62,6 +62,7 @@ const Navbar = () => {
         <li><Link to="/exams">Exams</Link></li>
         <li><Link to="/resources">Resources</Link></li>
         <li><Link to="/contact">Contact</Link></li>
+        <li><Link to='/checkresult'> Results </Link></li>
       </ul>
 
       <div className="navbar-buttons">
