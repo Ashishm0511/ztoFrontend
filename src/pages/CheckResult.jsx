@@ -1,15 +1,34 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import "./CheckResult.css";
+import Navbar from "../Components/Navbar"; // Ensure correct import
+import Footer from "../Components/Footer"; // Ensure correct import
 
-const CheckResult = ({ resultData }) => {
+const CheckResult = () => {
+  const location = useLocation();
+  const resultData = location.state?.resultData;
+
+  if (!resultData) {
+    return (
+      <>
+        <Navbar />
+        <div className="result-container">
+          <div className="no-result">No result data available.</div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
   return (
-    <div className="result-container">
-      <div className="result-header">
-        <h1>Exam Results</h1>
-        <p>Access your examination results with detailed performance analysis</p>
-      </div>
+    <>
+      <Navbar />
+      <div className="result-container">
+        <div className="result-header">
+          <h1>Exam Results</h1>
+          <p>Access your examination results with detailed performance analysis</p>
+        </div>
 
-      {resultData ? (
         <div className="result-details">
           <h2>{resultData.studentName}</h2>
           <p><strong>Roll Number:</strong> {resultData.rollNumber}</p>
@@ -31,10 +50,9 @@ const CheckResult = ({ resultData }) => {
             </ul>
           </div>
         </div>
-      ) : (
-        <p className="no-result">No result data available.</p>
-      )}
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

@@ -7,46 +7,35 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Rewards from './pages/Rewards';
 import PastExams from './pages/PastExams';
-
 import EnrollExams from './pages/EnrollExams';
-
-import CheckResult from './pages/CheckResult';
-import Exams from './pages/Exams';
-
 import PrivateComponent from './pages/privateComponent';
-// import EnrollExams from './pages/EnrollExams';
-
-
-
-
-
-// import CheckResults from './pages/CheckResults';
+import CheckResult from './pages/CheckResult'; // Corrected import
 import CardLayout from './pages/Exams';
+import PageNotFound from './Components/PageNotFound';
+
+const resultData = {
+  studentName: "John Doe",
+  rollNumber: "123456",
+  course: "Full Stack Web Development",
+};
+
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-         
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
-
-          
-          {/* <Route element={<PrivateComponent />}> */}
-
-            <Route path="/" element={<Home />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/exams" element={<CardLayout/>} />
-            <Route path="/pastexams" element={<PastExams />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            {/* <Route path="/enroll-exams" element={<EnrollExams />} /> */}
-            <Route path="/rewards" element={<Rewards />} />
-            {/* <Route path="/check-results" element={<CheckResults />} /> */}
-            
-          {/* </Route> */}
-
+          <Route path="/" element={<Home />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/exams" element={<CardLayout />} />
+          <Route path="/pastexams" element={<PastExams />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/enroll-exams" element={<EnrollExams />} />
+          <Route path="/rewards" element={<Rewards />} />
+          <Route path="/checkresult" element={<CheckResult  />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
     </div>

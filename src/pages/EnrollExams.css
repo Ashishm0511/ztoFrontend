@@ -29,8 +29,8 @@ body {
 
 /* ---------- Container ---------- */
 .enroll-container {
-  max-width: 800px;
-  margin-inline: auto;
+  max-width: 1200px; /* Increased width for better visibility */
+  margin: 2rem auto; /* Added margin for spacing */
   padding: 2rem 1.5rem;
   position: relative; /* back button anchor */
 }
@@ -53,14 +53,14 @@ body {
 }
 
 .enroll-header h1 {
-  font-size: clamp(1.75rem, 5vw, 2rem);
+  font-size: clamp(2rem, 5vw, 2.5rem); /* Increased font size */
   color: var(--primary);
   margin-block-end: 0.5rem;
 }
 
 .enroll-header p {
   color: var(--text-light);
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Slightly larger font for better readability */
 }
 
 /* ---------- Exam List ---------- */
@@ -77,6 +77,12 @@ body {
   padding: 2rem;
   box-shadow: var(--shadow);
   border: 1px solid #eee;
+  transition: transform 0.2s, box-shadow 0.2s; /* Added hover effect */
+}
+
+.exam-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Card Header */
@@ -90,16 +96,16 @@ body {
 }
 
 .exam-card .card-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem; /* Increased font size */
   color: var(--text-dark);
   margin: 0;
 }
 
 /* Status Badges */
 .status-badge {
-  padding: 0.35rem 1rem;
+  padding: 0.5rem 1.2rem; /* Adjusted padding */
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased font size */
   font-weight: 600;
   white-space: nowrap;
 }
@@ -117,8 +123,8 @@ body {
 /* Exam Details Grid */
 .exam-details {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted grid for better spacing */
+  gap: 1.5rem; /* Increased gap */
   margin-block-end: 1.5rem;
 }
 
@@ -141,7 +147,7 @@ body {
 
 /* Modules */
 .modules-section h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Increased font size */
   color: #555;
   margin-block-end: 1rem;
 }
@@ -173,16 +179,33 @@ body {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s; /* Added hover effect */
 }
 
 .enroll-button:is(:hover, :focus-visible) {
   background: #5a0a9d;
+  transform: scale(1.05); /* Slight scaling effect */
 }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .enroll-container {
     padding: 1.5rem 1rem;
+  }
+
+  .exam-card {
+    padding: 1.5rem; /* Reduced padding for smaller screens */
+  }
+
+  .exam-card .card-header h2 {
+    font-size: 1.5rem; /* Adjusted font size */
+  }
+
+  .status-badge {
+    font-size: 0.9rem; /* Adjusted font size */
+  }
+
+  .exam-details {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
   }
 }
