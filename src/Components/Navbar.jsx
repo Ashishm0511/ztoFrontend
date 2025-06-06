@@ -9,6 +9,12 @@ const Navbar = () => {
     navigate("/login");
   };
 
+  const handleLogout = (e) =>
+{
+      e.preventDefault();
+      localStorage.removeItem("email");
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -25,7 +31,7 @@ const Navbar = () => {
 
       <div className="navbar-buttons">
         <button className="login-btn" onClick={handleLogin}>Login</button>
-        <button className="getstarted-btn">Get Started</button>
+        <button className="getstarted-btn" onClick={handleLogout}> logout</button>
       </div>
     </nav>
   );
