@@ -8,6 +8,10 @@ import Home from './pages/Home';
 import Rewards from './pages/Rewards';
 import PastExams from './pages/PastExams';
 // import EnrollExams from './pages/EnrollExams';
+
+import EnrollExams from './pages/EnrollExams';
+import Rewards from './pages/Rewards';
+
 // import CheckResults from './pages/CheckResults';
 // import CardLayout from './pages/Exams';
 
