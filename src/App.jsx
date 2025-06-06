@@ -7,9 +7,9 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Rewards from './pages/Rewards';
 import PastExams from './pages/PastExams';
-// import EnrollExams from './pages/EnrollExams';
+import EnrollExams from './pages/EnrollExams';
 // import CheckResults from './pages/CheckResults';
-// import CardLayout from './pages/Exams';
+import CardLayout from './pages/Exams';
 
 
 function App() {
@@ -21,13 +21,14 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/resources" element={<Resources />} />
-          {/* <Route path="/exams" element={<CardLayout/>} /> */}
+          <Route path="/exams" element={<CardLayout/>} />
           <Route path="/pastexams" element={<PastExams />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/enroll-exams" element={<EnrollExams />} /> */}
+          <Route path="/enroll-exams" element={<EnrollExams />} />
           <Route path="/rewards" element={<Rewards />} />
           {/* <Route path="/check-results" element={<CheckResults />} /> */}
+          {/* <Route path="/past-exams" element={<PastExams />} /> */}
         </Routes>
       </Router>
     </div>
