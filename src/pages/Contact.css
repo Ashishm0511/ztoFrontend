@@ -69,3 +69,64 @@
     cursor: pointer;
   }
   
+  @media (max-width: 900px) {
+    .contact-container {
+      flex-direction: column;
+      width: 98%;
+      max-width: 700px;
+    }
+    .contact-left,
+    .contact-right {
+      padding: 24px;
+    }
+    .contact-left img {
+      max-width: 260px;
+    }
+    .contact-right h2 {
+      font-size: 22px;
+    }
+    .contact-right p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .contact-wrapper {
+      padding: 8px 2vw;
+      min-height: unset;
+    }
+    .contact-container {
+      flex-direction: column;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .contact-left,
+    .contact-right {
+      padding: 12px 6px;
+    }
+    .contact-left img {
+      max-width: 120px;
+      width: 80vw;
+    }
+    .contact-right h2 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .contact-right p {
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 12px;
+      padding: 8px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+    }
+    .send-btn {
+      padding: 9px;
+      font-size: 14px;
+      border-radius: 6px;
+    }
+  }

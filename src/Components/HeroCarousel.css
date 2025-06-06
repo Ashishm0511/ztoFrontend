@@ -111,3 +111,51 @@
     }
   }
   
+  @media (max-width: 900px) {
+    .carousel-wrapper {
+      height: 60vh;
+      min-height: 350px;
+    }
+    .carousel-slide img {
+      max-width: 350px;
+    }
+    .carousel-text h1 {
+      font-size: 2rem;
+    }
+    .carousel-text p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .carousel-wrapper {
+      height: 45vh;
+      min-height: 220px;
+      padding: 0 5px;
+    }
+    .carousel-slide {
+      padding: 10px 0;
+    }
+    .carousel-slide img {
+      max-width: 220px;
+      border-radius: 12px;
+    }
+    .carousel-text {
+      margin-top: 18px;
+    }
+    .carousel-text h1 {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+    .carousel-text p {
+      font-size: 0.95rem;
+    }
+    .carousel-dots {
+      bottom: 10px;
+      gap: 6px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+    }
+  }

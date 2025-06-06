@@ -9,7 +9,9 @@ import Rewards from './pages/Rewards';
 import PastExams from './pages/PastExams';
 import EnrollExams from './pages/EnrollExams';
 import PrivateComponent from './pages/privateComponent';
+
 import CheckResult from './pages/CheckResult'; // Corrected import
+
 import CardLayout from './pages/Exams';
 import PageNotFound from './Components/PageNotFound';
 
@@ -26,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
           <Route path="/" element={<Home />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/exams" element={<CardLayout />} />
@@ -36,6 +39,7 @@ function App() {
           <Route path="/rewards" element={<Rewards />} />
           <Route path="/checkresult" element={<CheckResult  />} />
           <Route path="*" element={<PageNotFound />} />
+
         </Routes>
       </Router>
     </div>
