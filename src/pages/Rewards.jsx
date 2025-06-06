@@ -1,6 +1,8 @@
 import React from 'react';
+import Navbar from '../Components/Navbar';
 import { useNavigate } from 'react-router-dom';
 import './Rewards.css';
+import Footer from '../Components/Footer';
 
 const Rewards = () => {
   const navigate = useNavigate();
@@ -14,6 +16,8 @@ const Rewards = () => {
   ];
 
   return (
+    <>
+    <Navbar />
     <div className="rewards-container">
       <header className="rewards-header">
         <button className="rewards-back-btn" onClick={() => navigate(-1)}>
@@ -68,6 +72,8 @@ const Rewards = () => {
         </div>
       </section>
     </div>
+    <Footer />
+    </>
   );
 };
 
