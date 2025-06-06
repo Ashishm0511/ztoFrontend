@@ -17,27 +17,9 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    localStorage.setItem("email" , formData.email);
     setError('');
-
-    try {
-      const res = await fetch('http://localhost:5000/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        localStorage.setItem('token', data.token);
-        navigate('/');
-      } else {
-        setError(data.message || 'Invalid login');
-      }
-    } catch (err) {
-      console.error(err);
-      setError('Server error. Try again later.');
-    }
+    navigate("/");
   };
 
   return (
