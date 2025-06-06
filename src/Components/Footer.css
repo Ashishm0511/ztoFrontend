@@ -84,3 +84,70 @@
     color: #4f3ff0;
   }
   
+  @media (max-width: 900px) {
+    .footer {
+      padding: 24px 18px;
+    }
+    .footer-center {
+      gap: 30px;
+    }
+    .footer-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .footer {
+      padding: 16px 4vw;
+    }
+    .footer-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .footer-center {
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+    }
+    .footer-left img.logo {
+      height: 32px;
+    }
+    .footer-left p {
+      font-size: 11px;
+    }
+    .footer-center h4 {
+      font-size: 15px;
+    }
+    .footer-center p {
+      font-size: 12px;
+    }
+    .footer-right {
+      gap: 6px;
+    }
+    .btn-register,
+    .btn-outline {
+      padding: 7px 10px;
+      font-size: 13px;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .footer-bottom p {
+      font-size: 11px;
+    }
+    .social-icons i {
+      font-size: 15px;
+      margin-left: 8px;
+    }
+  }
