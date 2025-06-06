@@ -12,7 +12,7 @@ const About = () => {
 
         <div className="about-content">
             <p className="about-intro">
-            Welcome to <span className="highlight">EduExam</span> — Your trusted partner for quality online exams.
+            Welcome to <span className="highlight">Zonal Talent Olympiad</span> — Your trusted partner for quality online exams.
             We are committed to empowering students from every corner of India, especially rural and village areas.
             </p>
 
