@@ -1,4 +1,5 @@
 import './Navbar.css';
+
 import { useNavigate, Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -30,6 +31,7 @@ const Navbar = () => {
       </ul>
 
       <div className="navbar-buttons">
+
         <button className="login-btn" onClick={handleLogin}>Login</button>
         <button className="getstarted-btn" onClick={handleLogout}> logout</button>
       </div>
