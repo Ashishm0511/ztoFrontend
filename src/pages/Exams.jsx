@@ -4,7 +4,7 @@ import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import { useNavigate } from 'react-router-dom';
 
-const CardLayout = () => {
+const Exams = () => {
   const navigate = useNavigate();
   return (
     <>
@@ -96,4 +96,4 @@ const CardLayout = () => {
   );
 };
 
-export default CardLayout;
+export default Exams;
