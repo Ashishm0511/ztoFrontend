@@ -1,114 +1,245 @@
-.resources-wrapper {
-    padding: 60px 30px;
-    background: linear-gradient(to right, #e0eafc, #cfdef3);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Base Styles */
+.resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resources-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resources-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.resources-header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* Tabs Navigation */
+.resources-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 1rem;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  background: none;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background-color: #6A0DAD;
+  color: white;
+}
+
+.tab-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.tab-btn.active:hover {
+  background-color: #531f9c;
+}
+
+/* Grade Selector */
+.grade-selector h2,
+.subject-selector h2,
+.sample-papers h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.grade-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.grade-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.grade-btn.selected {
+  background-color: #6A0DAD;
+  color: white;
+}
+
+.grade-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.grade-btn.selected:hover {
+  background-color: #531f9c;
+}
+
+/* Subject Grid */
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.subject-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subject-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.subject-card-wide {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.subject-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background-color: #6A0DAD;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.subject-card h4 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.grade-chip {
+  padding: 0.35rem 0.75rem;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin: 0.25rem;
+  cursor: pointer;
+}
+
+.grade-chip:hover {
+  background-color: #e0e0e0;
+}
+
+/* Sample Papers */
+.paper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.paper-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.paper-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.download-btn {
+  padding: 0.5rem 1rem;
+  background-color: #6A0DAD;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #531f9c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resources-header h1 {
+    font-size: 2rem;
   }
   
-  .resources-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 50px;
-    color: #333;
-    animation: slideIn 1s ease;
+  .resources-tabs {
+    flex-wrap: wrap;
   }
   
-  .resources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    width: 100%;
-    max-width: 1300px;
+  .tab-btn {
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
   
-  .resource-card {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    transition: all 0.4s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+  .grade-buttons {
+    gap: 0.5rem;
   }
   
-  .resource-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  .grade-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
   
-  /* Different card border colors */
-  .color0 { border-top: 5px solid #6a11cb; }
-  .color1 { border-top: 5px solid #ff6a00; }
-  .color2 { border-top: 5px solid #00b09b; }
-  .color3 { border-top: 5px solid #ff3c3c; }
-  .color4 { border-top: 5px solid #4facfe; }
-  
-  .grade-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #4e4cf4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+  .subject-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .resources-container {
+    padding: 1rem;
   }
   
-  .subject-dropdown {
-    margin-top: 15px;
-    animation: fadeInDropdown 0.6s ease forwards;
+  .resources-header h1 {
+    font-size: 1.75rem;
   }
   
-  .subject-title {
-    font-size: 18px;
-    font-weight: 600;
-    padding: 10px;
-    background: linear-gradient(90deg, #f9f9ff, #e0eafc);
-    border-radius: 8px;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: background 0.3s;
+  .subject-grid {
+    grid-template-columns: 1fr;
   }
   
-  .subject-title:hover {
-    background: linear-gradient(90deg, #d0e1ff, #ffd1dc);
+  .paper-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .subtopics-list {
-    padding: 12px 15px;
-    margin: 8px 0 16px 0;
-    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
-    border-radius: 10px;
-    color: #333;
-    font-size: 15px;
-    animation: expandHeight 0.5s ease forwards;
-  }
-  
-  /* Animations */
-  @keyframes fadeInDropdown {
-    from { opacity: 0; transform: translateY(-10px);}
-    to { opacity: 1; transform: translateY(0);}
-  }
-  
-  @keyframes expandHeight {
-    0% { max-height: 0; opacity: 0; }
-    100% { max-height: 200px; opacity: 1; }
-  }
-  
-  @keyframes slideIn {
-    0% { transform: translateY(-30px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-  }
-  
-  /* Responsive Tweaks */
-  @media (max-width: 600px) {
-    .resources-title {
-      font-size: 2.2rem;
-    }
-  }
-  
+}
