@@ -14,9 +14,6 @@ import PrivateComponent from './pages/privateComponent';
 // import EnrollExams from './pages/EnrollExams';
 
 
-
-
-
 // import CheckResults from './pages/CheckResults';
 import CardLayout from './pages/Exams';
 
@@ -39,11 +36,12 @@ function App() {
             <Route path="/pastexams" element={<PastExams />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path="/enroll-exams" element={<EnrollExams />} /> */}
+            <Route path="/enroll-exams" element={<EnrollExams />} />
             <Route path="/rewards" element={<Rewards />} />
             {/* <Route path="/check-results" element={<CheckResults />} /> */}
             
           {/* </Route> */}
+
 
         </Routes>
       </Router>

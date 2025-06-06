@@ -1,8 +1,36 @@
+
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
 import { useNavigate, Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Toggle mobile menu
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Close mobile menu when clicking on a link
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  // Navbar scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -17,9 +45,15 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isOpen ? 'open' : ''} ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-logo">
         <h1>ZTO</h1>
+      </div>
+
+      <div className="hamburger" onClick={toggleMenu}>
+        <span className={isOpen ? 'active' : ''}></span>
+        <span className={isOpen ? 'active' : ''}></span>
+        <span className={isOpen ? 'active' : ''}></span>
       </div>
 
       <ul className="navbar-links">
