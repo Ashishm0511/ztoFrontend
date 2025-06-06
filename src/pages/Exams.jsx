@@ -33,7 +33,7 @@ const Exams = () => {
         {/* Rewards Card */}
         <div 
           className="small-card rewards-card"
-          onClick={() => navigate('/rewards')}
+          // onClick={() => navigate('/rewards')}
         >
           <div className="card-icon">🏆</div>
           <h3>Your Rewards</h3>
@@ -52,7 +52,7 @@ const Exams = () => {
         {/* Results Card */}
         <div 
           className="small-card results-card"
-          onClick={() => navigate('/check-results')}
+          // onClick={() => navigate('/checkresult')}
         >
           <div className="card-icon">📊</div>
           <h3>Check Results</h3>
@@ -61,7 +61,7 @@ const Exams = () => {
             className="card-button"
             onClick={(e) => {
               e.stopPropagation();
-              navigate('/check-results');
+              navigate('/checkresult');
             }}
           >
             Check Now
@@ -72,7 +72,7 @@ const Exams = () => {
       {/* Past Exams Card */}
       <div 
         className="full-width-card"
-        onClick={() => navigate('/past-exams')}
+        // onClick={() => navigate('/past-exams')}
       >
         <div className="full-card-content">
           <div className="full-card-text">

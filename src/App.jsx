@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import Rewards from './pages/Rewards';
 import PastExams from './pages/PastExams';
 import EnrollExams from './pages/EnrollExams';
-// import CheckResults from './pages/CheckResults';
+import CheckResult from './pages/CheckResult';
 import Exams from './pages/Exams';
 
 
@@ -27,7 +27,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/enroll-exams" element={<EnrollExams />} />
           <Route path="/rewards" element={<Rewards />} />
-          {/* <Route path="/check-results" element={<CheckResults />} /> */}
+          <Route path="/checkresult" element={<CheckResult />} />
+        
         </Routes>
       </Router>
     </div>
