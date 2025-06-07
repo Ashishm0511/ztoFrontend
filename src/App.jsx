@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import EnrollExams from './pages/EnrollExams';
 import Rewards from './pages/Rewards';
 import PastExams from './pages/PastExams';
+import UpcomingExams from './pages/upcomingExams'
 // import EnrollExams from './pages/EnrollExams';
 // import PrivateComponent from './pages/privateComponent';
 
@@ -16,11 +17,6 @@ import CheckResult from './pages/CheckResult'; // Corrected import
 import CardLayout from './pages/Exams';
 import PageNotFound from './Components/PageNotFound';
 
-const resultData = {
-  studentName: "John Doe",
-  rollNumber: "123456",
-  course: "Full Stack Web Development",
-};
 
 function App() {
   return (
@@ -29,7 +25,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
+           <Route path="/UpcomingExams" element={<UpcomingExams />} />
           <Route path="/" element={<Home />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/exams" element={<CardLayout />} />

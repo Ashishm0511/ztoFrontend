@@ -11,26 +11,25 @@ const Exams = () => {
       <Navbar />
      
        
-      <div className="card-row">
-        {/* Enroll Exams Card */}
+   
         <div 
-          className="small-card enroll-card"
-          onClick={() => navigate('/enroll-exams')}
+          className="small-card rewards-card"
+       
         >
-          <div className="card-icon">📝</div>
-          <h3>Upcoming exams</h3>
-          <p>know all upcoming exams from ZTO </p>
+          <div className="card-icon">🏆</div>
+          <h3>Upcoming Exams</h3>
+          <p>Know more about All Upcoming exams from ZTO</p>
           <button 
             className="card-button"
             onClick={(e) => {
-             e.preventDefault();
-              navigate('/UpcomingExams'); 
+              e.stopPropagation();
+              navigate('/UpcomingExams');
             }}
           >
-            Check Now
+           Know More
           </button>
         </div>
-        </div>
+        
 
       
     <div className="card-container">
