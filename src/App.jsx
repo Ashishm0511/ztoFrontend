@@ -7,28 +7,40 @@ import About from './pages/About';
 import Home from './pages/Home';
 import EnrollExams from './pages/EnrollExams';
 import Rewards from './pages/Rewards';
-// import CheckResults from './pages/CheckResults';
-import PastExams from './Pages/PastExams';
-import CardLayout from './pages/Exams';
+import PastExams from './pages/PastExams';
+// import EnrollExams from './pages/EnrollExams';
+// import PrivateComponent from './pages/privateComponent';
 
+import CheckResult from './pages/CheckResult'; // Corrected import
+
+import CardLayout from './pages/Exams';
+import PageNotFound from './Components/PageNotFound';
+
+const resultData = {
+  studentName: "John Doe",
+  rollNumber: "123456",
+  course: "Full Stack Web Development",
+};
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-
-          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
+          <Route path="/" element={<Home />} />
           <Route path="/resources" element={<Resources />} />
-          <Route path="/exams" element={<CardLayout/>} />
-          <Route path="/pastexams" element={<PastExams/>} />
+          <Route path="/exams" element={<CardLayout />} />
+          <Route path="/pastexams" element={<PastExams />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/enroll-exams" element={<EnrollExams />} />
           <Route path="/rewards" element={<Rewards />} />
-          {/* <Route path="/check-results" element={<CheckResults />} /> */}
+          <Route path="/checkresult" element={<CheckResult  />} />
+          <Route path="*" element={<PageNotFound />} />
+
         </Routes>
       </Router>
     </div>

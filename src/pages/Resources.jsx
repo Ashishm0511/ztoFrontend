@@ -3,68 +3,121 @@ import './Resources.css';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
-const grades = ["Grade 6", "Grade 7", "Grade 8", "Grade 9", "Grade 10", "Grade 11", "Grade 12", "Sample Papers"];
-const subjects = ["Physics", "Chemistry", "Maths", "English"];
-
 const Resources = () => {
-  const [activeGrade, setActiveGrade] = useState(null);
-  const [activeSubject, setActiveSubject] = useState({});
+  const [activeTab, setActiveTab] = useState('grades');
+  const [selectedGrade, setSelectedGrade] = useState(null);
+  const [selectedSubject, setSelectedSubject] = useState(null);
 
-  const toggleGrade = (grade) => {
-    if (activeGrade === grade) {
-      setActiveGrade(null);
-    } else {
-      setActiveGrade(grade);
-    }
-  };
-
-  const toggleSubject = (grade, subject) => {
-    setActiveSubject((prev) => ({
-      ...prev,
-      [grade]: prev[grade] === subject ? null : subject
-    }));
-  };
+  const grades = ["Grade 6", "Grade 7", "Grade 8", "Grade 9", "Grade 10", "Grade 11", "Grade 12"];
+  const subjects = ["Physics", "Chemistry", "Maths", "English", "Biology"];
+  const samplePapers = ["2023 Papers", "2022 Papers", "2021 Papers", "Model Papers"];
 
   return (
     <>
-        <Navbar />
-        <div className="resources-wrapper">
-        <h1 className="resources-title">Resources</h1>
+      <Navbar />
+      <div className="resources-container">
+        <div className="resources-header">
+          <h1>Learning Resources</h1>
+          <p>Access study materials for all grades and subjects</p>
+        </div>
 
-        <div className="resources-grid">
-            {grades.map((grade, index) => (
-            <div key={grade} className={`resource-card color${index % 5}`}>
-                <div className="grade-title" onClick={() => toggleGrade(grade)}>
-                {grade}
-                <span>{activeGrade === grade ? "-" : "+"}</span>
-                </div>
+        <div className="resources-tabs">
+          <button 
+            className={`tab-btn ${activeTab === 'grades' ? 'active' : ''}`}
+            onClick={() => setActiveTab('grades')}
+          >
+            By Grade
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'subjects' ? 'active' : ''}`}
+            onClick={() => setActiveTab('subjects')}
+          >
+            By Subject
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'samples' ? 'active' : ''}`}
+            onClick={() => setActiveTab('samples')}
+          >
+            Sample Papers
+          </button>
+        </div>
 
-                {activeGrade === grade && (
-                <div className="subject-dropdown animate-expand">
-                    {subjects.map((subject) => (
-                    <div key={subject}>
-                        <div 
-                        className="subject-title" 
-                        onClick={() => toggleSubject(grade, subject)}
-                        >
-                        {subject} 
-                        <span>{activeSubject[grade] === subject ? "-" : "+"}</span>
-                        </div>
-
-                        {activeSubject[grade] === subject && (
-                        <div className="subtopics-list">
-                            <p>Explore {subject} topics here!</p>
-                        </div>
-                        )}
-                    </div>
+        <div className="resources-content">
+          {activeTab === 'grades' && (
+            <div className="grade-selector">
+              <h2>Select Your Grade</h2>
+              <div className="grade-buttons">
+                {grades.map(grade => (
+                  <button
+                    key={grade}
+                    className={`grade-btn ${selectedGrade === grade ? 'selected' : ''}`}
+                    onClick={() => setSelectedGrade(grade)}
+                  >
+                    {grade}
+                  </button>
+                ))}
+              </div>
+              
+              {selectedGrade && (
+                <div className="subject-selection">
+                  <h3>Subjects for {selectedGrade}</h3>
+                  <div className="subject-grid">
+                    {subjects.map(subject => (
+                      <div 
+                        key={subject}
+                        className="subject-card"
+                        onClick={() => setSelectedSubject(subject)}
+                      >
+                        <div className="subject-icon">{subject.charAt(0)}</div>
+                        <h4>{subject}</h4>
+                      </div>
                     ))}
+                  </div>
                 </div>
-                )}
+              )}
             </div>
-            ))}
+          )}
+
+          {activeTab === 'subjects' && (
+            <div className="subject-selector">
+              <h2>Browse By Subject</h2>
+              <div className="subject-grid">
+                {subjects.map(subject => (
+                  <div key={subject} className="subject-card-wide">
+                    <h3>{subject}</h3>
+                    <div className="grade-buttons">
+                      {grades.map(grade => (
+                        <button
+                          key={`${subject}-${grade}`}
+                          className="grade-chip"
+                        >
+                          {grade.split(' ')[1]}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'samples' && (
+            <div className="sample-papers">
+              <h2>Sample Papers</h2>
+              <div className="paper-grid">
+                {samplePapers.map(paper => (
+                  <div key={paper} className="paper-card">
+                    <div className="paper-icon">📄</div>
+                    <h3>{paper}</h3>
+                    <button className="download-btn">Download</button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-        </div>
-        <Footer/>
+      </div>
+      <Footer />
     </>
   );
 };
