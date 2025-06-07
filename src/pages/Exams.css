@@ -63,3 +63,54 @@ p {
   color: #666;
   font-size: 14px;
 }
+
+@media (max-width: 900px) {
+  .card-row {
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x: unset;
+    gap: 16px;
+    padding-bottom: 0;
+  }
+  .small-card {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+    flex: 1 1 100%;
+    padding: 24px;
+    margin-bottom: 0;
+  }
+  .full-width-card {
+    padding: 24px;
+  }
+}
+
+/* Optional: Hide scrollbar for horizontal scroll (not needed anymore, but safe to keep) */
+.card-row::-webkit-scrollbar {
+  display: none;
+}
+.card-row {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    padding: 8px;
+  }
+  .small-card,
+  .full-width-card {
+    font-size: 0.98rem;
+  }
+  .card-button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+  h2, h3 {
+    font-size: 1.1rem;
+  }
+  p {
+    font-size: 0.97rem;
+  }
+}
