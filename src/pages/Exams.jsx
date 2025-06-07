@@ -23,8 +23,8 @@ const Exams = () => {
           <button 
             className="card-button"
             onClick={(e) => {
-              e.stopPropagation();
-              navigate('/UpcomingExams'); // Assuming you have a route for upcoming exams
+             e.preventDefault();
+              navigate('/UpcomingExams'); 
             }}
           >
             Check Now
