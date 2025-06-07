@@ -31,7 +31,7 @@ const PastExams = () => {
     <div>
       <Navbar />
       <div className="past-exams-container">
-        <h2 className="past-exams-title">Past Exams & Results</h2>
+        <h2 className="past-exams-title">Past Exams</h2>
         <div className="past-exams-grid">
           {pastExams.map((exam, index) => (
             <div className="past-exam-card" key={index}>

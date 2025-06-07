@@ -5,10 +5,11 @@ import Resources from './pages/Resources';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Home from './pages/Home';
+import EnrollExams from './pages/EnrollExams';
 import Rewards from './pages/Rewards';
 import PastExams from './pages/PastExams';
-import EnrollExams from './pages/EnrollExams';
-import PrivateComponent from './pages/privateComponent';
+// import EnrollExams from './pages/EnrollExams';
+// import PrivateComponent from './pages/privateComponent';
 
 import CheckResult from './pages/CheckResult'; // Corrected import
 

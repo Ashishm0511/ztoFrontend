@@ -92,7 +92,7 @@ const Exams = () => {
             className="card-button full-width-button"
             onClick={(e) => {
               e.stopPropagation();
-              navigate('/past-exams');
+              navigate('/PastExams');
             }}
           >
             View Complete History

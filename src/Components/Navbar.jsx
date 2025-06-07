@@ -5,6 +5,7 @@ import './Navbar.css';
 import { useNavigate, Link } from 'react-router-dom';
 
 const Navbar = () => {
+
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
