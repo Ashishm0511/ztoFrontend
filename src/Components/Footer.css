@@ -50,6 +50,7 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    text-decoration: none;
   }
   
   .btn-outline {
@@ -59,14 +60,17 @@
     padding: 6px 16px;
     border-radius: 6px;
     cursor: pointer;
+    text-decoration: none;
   }
   
-  .footer-bottom {
-    margin-top: 30px;
-    display: flex;
+ .footer-bottom {
+    margin-top: 10px;
+    display: flex
+;
     justify-content: space-between;
     align-items: center;
-  }
+    flex-direction: column;
+ }
   
   .footer-bottom p {
     font-size: 13px;
