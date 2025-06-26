@@ -1,6 +1,9 @@
 import React from 'react';
 import './ExamSection.css';
 import { useNavigate } from 'react-router-dom';
+import { FaSquareRootAlt, FaAtom, FaVial, FaDna, FaGlobeAmericas, FaPuzzlePiece } from 'react-icons/fa';
+import { Typewriter } from 'react-simple-typewriter';
+import { useInView } from 'react-intersection-observer';
 
 const categories = [
   { title: 'Primary Exam', color: '#E1F0FA', image: '/Exams_1.jpg' },
@@ -9,17 +12,48 @@ const categories = [
 ];
 
 const subjects = [
-  { name: 'Math', desc: 'Sky was cloudless and of a deep dark blue spectacle before us was indeed.', icon: '/Red_Atom.png' },
-  { name: 'English', desc: 'Even the all-powerful Pointing has no control...', icon: '/Red_Atom.png' },
-  { name: 'Science', desc: 'One day however a small line of blind text.', icon: '/Red_Atom.png' },
-  { name: 'Physics', desc: 'A small line of blind text by the name.', icon: '/Red_Atom.png' },
-  { name: 'General Knowledge', desc: 'Decided to leave for the World of Grammar.', icon: '/Red_Atom.png' },
+  {
+    name: 'Mathematics',
+    quote: "Without mathematics, there's nothing you can do. Everything around you is mathematics. Everything around you is numbers.",
+    author: '— Shakuntala Devi',
+    icon: <FaSquareRootAlt className="subject-icon" style={{ color: '#3b82f6' }} />,
+  },
+  {
+    name: 'Physics',
+    quote: "Physics isn't the most important thing. Love is.",
+    author: '— Richard Feynman',
+    icon: <FaAtom className="subject-icon" style={{ color: '#a21caf' }} />,
+  },
+  {
+    name: 'Chemistry',
+    quote: "Chemistry is necessarily an experimental science: its conclusions are drawn from data, and its principles supported by evidence from facts.",
+    author: '— Michael Faraday',
+    icon: <FaVial className="subject-icon" style={{ color: '#f59e42' }} />,
+  },
+  {
+    name: 'Biology',
+    quote: "The greatest miracle on Earth is life itself.",
+    author: '— Saurabh Yadav',
+    icon: <FaDna className="subject-icon" style={{ color: '#22c55e' }} />,
+  },
+  {
+    name: 'General Awareness',
+    quote: "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.",
+    author: '— Stephen Hawking',
+    icon: <FaGlobeAmericas className="subject-icon" style={{ color: '#fbbf24' }} />,
+  },
+  {
+    name: 'Reasoning',
+    quote: "It is not enough to have a good mind; the main thing is to use it well.",
+    author: '— Rene Descartes',
+    icon: <FaPuzzlePiece className="subject-icon" style={{ color: '#ef4444' }} />,
+  },
 ];
 
 const ExamSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="exam-section">
+    <section className="exam-section" id="exam-section">
       <div className="active-users">NUMBER OF ACTIVE USERS RIGHT NOW – 3000+</div>
 
       <div className="exam-categories">
@@ -38,13 +72,26 @@ const ExamSection = () => {
         </div>
 
         <div className="subject-grid">
-          {subjects.map((sub, idx) => (
-            <div key={idx} className="subject-card">
-              <img src={sub.icon} alt={sub.name} />
-              <h4>{sub.name}</h4>
-              <p>{sub.desc}</p>
-            </div>
-          ))}
+          {subjects.map((sub, idx) => {
+            const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+            return (
+              <div key={idx} className="subject-card" ref={ref}>
+                {sub.icon}
+                <h4>{sub.name}</h4>
+                <p className="subject-quote">
+                  {inView ? (
+                    <Typewriter
+                      words={[sub.quote]}
+                      typeSpeed={28}
+                      cursor
+                      cursorStyle="|"
+                    />
+                  ) : ''}
+                </p>
+                <p className="subject-author">{sub.author}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
