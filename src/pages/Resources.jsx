@@ -17,8 +17,8 @@ const Resources = () => {
       <Navbar />
       <div className="resources-container">
         <div className="resources-header">
-          <h1>Learning Resources</h1>
-          <p>Access study materials for all grades and subjects</p>
+          <h1>PYQ and Sample Papers</h1>
+          <p className="resources-subheading">ZTO: All Grades. All Subjects. One Place.</p>
         </div>
 
         <div className="resources-tabs">

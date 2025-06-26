@@ -4,30 +4,22 @@ import './Mission.css';
 const MissionSection = () => {
   return (
     <section className="mission-container">
-      <div className="mission-left">
-        <h2>ZTO - Transforms you in your best shape.</h2>
-        <p>
-          We carefully select students through rigorous screening exams, understand their unique needs, and
-          provide top-tier training to help them reach their fullest potential and achieve excellence.
-        </p>
-      </div>
-
-      <div className="mission-right">
-        <div className="mission-card">
-          <div className="mission-image-placeholder">
-            <img src="/SchoolBag.jpg" alt="School Bag" className="mission-image" />
-          </div>
-          <div className="mission-content">
-            <h4>MISSION ZONAL TALENT OLYMPIAD</h4>
-            <p>
-              Our mission is to empower students with the skills, knowledge, and confidence they need to succeed.
-              Through expert guidance, personalized training, and a results-driven approach, we nurture talent
-              and shape future achievers, ensuring they excel in their chosen paths.
-            </p>
-          </div>
+      <div className="mission-row">
+        <div className="mission-left">
+          <h2 className="mission-title">MISSION ZONAL TALENT OLYMPIAD</h2>
+          <p className="mission-text">
+            At ZTO, we are on a mission to bridge the educational gap in rural communities by creating a unified platform for opportunity and excellence.<br/>
+            We conduct competitive exams to identify talented students, provide them with personalized mentorship, and offer scholarships that empower them to pursue their dreams.
+          </p>
+          <p className="mission-text">
+            Through expert-led training, structured guidance, and a nurturing environment, we help students unlock their full potential — preparing them not just for exams, but for life.
+          </p>
+          <p className="mission-highlight"><b>Your journey to success starts here — let ZTO be your guide.</b></p>
+        </div>
+        <div className="mission-right">
+          <img src="/SchoolBag.jpg" alt="Mission ZTO" className="mission-image" />
         </div>
       </div>
-
       <div className="mission-button-wrapper">
         <button className="mission-button">Explore and Register</button>
       </div>

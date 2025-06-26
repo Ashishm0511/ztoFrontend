@@ -47,7 +47,12 @@ const Contact = () => {
 
             <div className="contact-right">
             <h2>Contact Us</h2>
-            <p>Some contact information on how to reach out</p>
+            <p className="contact-intro">We're here to help! If you have any questions, need support, or want to know more about ZTO, please reach out. Our team is always happy to assist students, parents, and teachers.</p>
+            <div className="contact-details">
+              <p><span className="icon">📧</span><b>Email:</b> teamworkzto1@gmail.com</p>
+              <p><span className="icon">📞</span><b>Phone:</b> +91-6386137862</p>
+            </div>
+            <p style={{marginBottom: '18px'}}>Or, simply fill out the form below and we'll get back to you as soon as possible!</p>
             <form onSubmit={handleSubmit} className="contact-form">
                 <input
                 type="text"

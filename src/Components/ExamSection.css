@@ -44,14 +44,18 @@
   
   .exam-explore .explore-heading {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-bottom: 30px;
+    text-align: center;
+    gap: 18px;
   }
   
   .explore-heading h2 {
     font-size: 28px;
     font-weight: 600;
+    margin: 0;
   }
   
   .explore-btn {
@@ -114,6 +118,10 @@
     }
     .exam-card img {
       height: 70px;
+    }
+    .explore-heading {
+      gap: 10px;
+      margin-bottom: 18px;
     }
     .explore-heading h2 {
       font-size: 22px;
