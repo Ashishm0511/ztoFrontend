@@ -2,6 +2,12 @@ import React from 'react';
 import './Mission.css';
 
 const MissionSection = () => {
+  const handleExploreClick = () => {
+    const examSection = document.getElementById('exam-section');
+    if (examSection) {
+      examSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="mission-container">
       <div className="mission-row">
@@ -21,7 +27,7 @@ const MissionSection = () => {
         </div>
       </div>
       <div className="mission-button-wrapper">
-        <button className="mission-button">Explore and Register</button>
+        <button className="mission-button" onClick={handleExploreClick}>Explore and Register</button>
       </div>
     </section>
   );
