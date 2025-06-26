@@ -1,5 +1,6 @@
 import React from 'react';
 import './ExamSection.css';
+import { useNavigate } from 'react-router-dom';
 
 const categories = [
   { title: 'Primary Exam', color: '#E1F0FA', image: '/Exams_1.jpg' },
@@ -16,6 +17,7 @@ const subjects = [
 ];
 
 const ExamSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="exam-section">
       <div className="active-users">NUMBER OF ACTIVE USERS RIGHT NOW – 3000+</div>
@@ -32,7 +34,7 @@ const ExamSection = () => {
       <div className="exam-explore">
         <div className="explore-heading">
           <h2>Explore Our Exam to <br />get Mentored</h2>
-          <button className="explore-btn">EXPLORE ALL</button>
+          <button className="explore-btn" onClick={() => navigate('/resources')}>EXPLORE ALL</button>
         </div>
 
         <div className="subject-grid">

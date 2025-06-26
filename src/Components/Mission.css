@@ -6,71 +6,55 @@
     background-color: #fafafa;
   }
   
-  .mission-left,
-  .mission-right {
-    width: 100%;
+  .mission-row {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
+    width: 100%;
+    gap: 3rem;
+    margin-bottom: 32px;
   }
   
   .mission-left {
-    flex: 1;
-    padding-right: 30px;
+    flex: 1 1 0;
+    padding-right: 24px;
   }
   
-  .mission-left h2 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #111;
-    margin-bottom: 16px;
+  .mission-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 18px;
   }
   
-  .mission-left p {
-    font-size: 16px;
+  .mission-text {
+    font-size: 1.08rem;
     color: #444;
-    line-height: 1.6;
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+  
+  .mission-highlight {
+    font-size: 1.1rem;
+    color: #4e4cf4;
+    margin-top: 10px;
+    margin-bottom: 0;
   }
   
   .mission-right {
-    flex: 1;
+    flex: 1 1 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
   }
   
-  .mission-card {
-    border: 1px solid #ccc;
-    background: #fff;
-    width: 100%;
-    max-width: 500px;
-  }
-  
-  .mission-image-placeholder {
-    height: 200px;
-    background-color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-style: italic;
-    color: #777;
-  }
-  
-  .mission-content {
-    padding: 20px;
-  }
-  
-  .mission-content h4 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  
-  .mission-content p {
-    font-size: 14px;
-    color: #444;
-    line-height: 1.5;
+  .mission-image {
+    width: 340px;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(78,76,244,0.10);
+    object-fit: cover;
   }
   
   .mission-button-wrapper {
@@ -92,52 +76,23 @@
   .mission-button:hover {
     background-color: #3730a3;
   }
-  .mission-image-placeholder img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-  }
   
-  .mission-image-placeholder {
-    width: 100%;
-    height: 220px; /* Or adjust depending on your design */
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .mission-image-placeholder img.mission-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* ensures image covers entire box without distortion */
-    border-radius: 10px;
-  }
-
   @media (max-width: 900px) {
-    .mission-container {
-      padding: 40px 20px;
-    }
-    .mission-left,
-    .mission-right {
+    .mission-row {
       flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 24px;
-      gap: 0;
+      gap: 1.5rem;
+      margin-bottom: 18px;
     }
     .mission-left {
       padding-right: 0;
-      margin-bottom: 24px;
     }
     .mission-right {
-      justify-content: flex-start;
-      align-items: flex-start;
+      justify-content: center;
+      margin-top: 10px;
     }
-    .mission-card {
-      max-width: 100%;
+    .mission-image {
+      width: 100%;
+      max-width: 320px;
     }
   }
   
@@ -145,27 +100,12 @@
     .mission-container {
       padding: 18px 4vw;
     }
-    .mission-left h2 {
+    .mission-title {
       font-size: 20px;
       margin-bottom: 10px;
     }
-    .mission-left p {
+    .mission-text {
       font-size: 14px;
-    }
-    .mission-content {
-      padding: 12px;
-    }
-    .mission-content h4 {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-    .mission-content p {
-      font-size: 12px;
-    }
-    .mission-image-placeholder,
-    .mission-image-placeholder img.mission-image {
-      height: 120px;
-      border-radius: 8px;
     }
     .mission-button-wrapper {
       margin-top: 20px;
