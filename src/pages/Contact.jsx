@@ -42,7 +42,7 @@ const Contact = () => {
         <div className="contact-wrapper">
         <div className="contact-container">
             <div className="contact-left">
-            <img src="/ContactUs.jpg" alt="Contact Us" />
+            <img src="/contact.jpg" alt="Contact Us"  style={{height:"500px" , width:"400px" ,borderRadius:"10px"}}/>
             </div>
 
             <div className="contact-right">
