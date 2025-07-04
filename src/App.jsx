@@ -9,6 +9,7 @@ import EnrollExams from './pages/EnrollExams';
 import Rewards from './pages/Rewards';
 import PastExams from './pages/PastExams';
 import UpcomingExams from './pages/upcomingExams'
+import Admin from './pages/Admin';
 // import EnrollExams from './pages/EnrollExams';
 // import PrivateComponent from './pages/privateComponent';
 
@@ -26,6 +27,7 @@ function App() {
   
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/admin" element={<Admin />} />
          
            <Route path="/UpcomingExams" element={<UpcomingExams />} />
           <Route path="/" element={<Home />} />
