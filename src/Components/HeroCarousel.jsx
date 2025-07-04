@@ -40,7 +40,7 @@ const HeroCarousel = () => {
   return (
     <div className="carousel-wrapper" style={{ backgroundColor: slides[current].bgColor }}>
       <div className="carousel-slide">
-        <img src={slides[current].image} alt={`Slide ${current}`} style={{width:"500px",height:'400px'}} />
+        <img src={slides[current].image} alt={`Slide ${current}`}  />
         <div className="carousel-text">
           <h1>{slides[current].title}</h1>
           <p style={{color:"white"}}>{slides[current].subtitle }</p>
