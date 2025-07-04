@@ -61,8 +61,8 @@ const About = () => {
           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}
         />
         <div className="about-main-container" style={{ position: 'relative', zIndex: 1 }}>
-          <h1 className="aboutpage-title">About Page</h1>
-          <p className="aboutpage-note">Need to Modify the About us Section as below</p>
+          <h1 className="aboutpage-title" style={{textAlign:"center", marginBottom:"50px"}}>About Us</h1>
+     
 
           {/* Mission Section */}
           <div className="about-flex-section alt-reverse">
@@ -76,14 +76,14 @@ const About = () => {
               </div>
             </div>
             <div className="about-image-box">
-              <img src="/ztoFrontend/public/HeroCarousel_1.jpg" alt="Mission" className="about-main-image" />
+              <img src="/mission.jpg" alt="Mission" className="about-main-image" style={{marginTop:"30px"}} />
             </div>
           </div>
 
           {/* History Section */}
           <div className="about-flex-section alt-normal">
             <div className="about-image-box">
-              <img src="/ztoFrontend/public/PrimaryExams.jpg" alt="History" className="about-main-image" />
+              <img src="/history.jpg" alt="History" className="about-main-image" style={{height:"240px" , marginTop:"30px"} } />
             </div>
             <div className="about-content-box">
               <h2 className="about-content-title">History</h2>
@@ -96,7 +96,7 @@ const About = () => {
           {/* Benefits Section */}
           <div className="about-flex-section alt-normal">
             <div className="about-image-box">
-              <img src="/ztoFrontend/public/OurTeams.jpg" alt="Benefits" className="about-main-image" />
+              <img src="/benifits.jpg" alt="Benefits" className="about-main-image" style={{height:"240px" , marginTop:"30px"} }  />
             </div>
             <div className="about-content-box">
               <h2 className="about-content-title">Benefits</h2>
@@ -115,7 +115,7 @@ const About = () => {
               </div>
             </div>
             <div className="about-image-box">
-              <img src="/ztoFrontend/public/ContactUs.jpg" alt="Founders" className="about-main-image" />
+              <img src="/founder.jpg" alt="Founders" className="about-main-image" style={{marginTop:"30px"}}/>
             </div>
           </div>
 

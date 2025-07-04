@@ -24,7 +24,7 @@ const teamMembers = [
   },
   {
     name: "MD Furkan",
-    role: "Udaka Dal",
+    role: "An Engineering Student",
     image: "/OurTeams.jpg",
   },
 ];

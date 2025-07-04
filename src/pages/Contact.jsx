@@ -42,7 +42,7 @@ const Contact = () => {
         <div className="contact-wrapper">
         <div className="contact-container">
             <div className="contact-left">
-            <img src="/ContactUs.jpg" alt="Contact Us" />
+            <img src="/contact.jpg" alt="Contact Us"  />
             </div>
 
             <div className="contact-right">

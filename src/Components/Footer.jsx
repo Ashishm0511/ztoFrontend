@@ -25,12 +25,11 @@ const Footer = () => {
             <p>Contact us</p>
             <p>History</p>
           </div>
-        </div>
-
-        <div className="footer-right">
-          <Link className="btn-register" to ="/login">Register</Link>
-          <Link className="btn-outline" to="/login">Log In</Link>
-         <Link className="btn-outline" to = "/login">ADMIN</Link>
+          <div className="footer-right">
+            <Link className="btn-register" to ="/login">Register</Link>
+            <Link className="btn-outline" to="/login">Log In</Link>
+            <Link className="btn-outline" to = "/login">ADMIN</Link>
+          </div>
         </div>
       </div>
 
@@ -40,18 +39,15 @@ const Footer = () => {
         <p>Follow us:</p>
         <br />
         <div className="social-icons">
-          <i className="fab fa-facebook-f">
-             <a href="https://www.linkedin.com/in/mdrzwn001" target="_blank" rel="noopener noreferrer">
-      <FaLinkedin size={30} color="#0e76a8" />
-    </a>
-          </i>
-          <i className="fab fa-twitter"> <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer">
-        <FaFacebook size={30} color="#1877F2" />
-      </a></i>
-          <i className="fab fa-instagram"> <a href="https://www.instagram.com/mdrzwn001" target="_blank" rel="noopener noreferrer">
-        <FaInstagram size={30} color="#E4405F" />
-      </a>
-      </i>
+          <a href="https://www.linkedin.com/in/mdrzwn001" target="_blank" rel="noopener noreferrer" className="social-link">
+            <FaLinkedin size={30} color="#0e76a8" />
+          </a>
+          <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">
+            <FaFacebook size={30} color="#1877F2" />
+          </a>
+          <a href="https://www.instagram.com/mdrzwn001" target="_blank" rel="noopener noreferrer" className="social-link">
+            <FaInstagram size={30} color="#E4405F" />
+          </a>
         </div>
       </div>
     </footer>
