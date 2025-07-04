@@ -4,15 +4,24 @@ import './HeroCarousel.css';
 const slides = [
   {
     id: 1,
-    image: 'https://drive.google.com/uc?export=view&id=1g-x9SyIM6SKN0gMPyAy8lt1qd66y8pF',
+    image: '/HeroCarousel_2.png',
+    title: 'Empower Your Learning',
+    subtitle: 'Discover endless resources and boost your knowledge.',
+    bgColor: '#ff6f61',
   },
   {
     id: 2,
-    image: 'https://drive.google.com/uc?export=view&id=1MyJmd7eMKBs26mWQfDYbDtyEwoacq8b',
+    image: '/HeroCarousel_2.png',
+    title: 'Connect & Collaborate',
+    subtitle: 'Join a community of innovators and creators.',
+    bgColor: '#6a5acd',
   },
   {
     id: 3,
-    image: 'https://drive.google.com/uc?export=view&id=1T1UkqhDjy6s4M06Mbpo2XFE4GEgCmmCF',
+    image: '/HeroCarousel_2.png',
+    title: 'Build Something Amazing',
+    subtitle: 'Turn your ideas into reality with powerful tools.',
+    bgColor: '#20b2aa',
   },
 ];
 
@@ -27,26 +36,23 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <div>
-      <div className="carousel-wrapper">
-        <div className="carousel-slide">
-          <img src={slides[current].image} alt={`Slide ${current + 1}`} />
-        </div>
-        <div className="carousel-dots">
-          {slides.map((_, idx) => (
-            <span
-              key={idx}
-              className={`dot ${current === idx ? 'active' : ''}`}
-              onClick={() => setCurrent(idx)}
-            />
-          ))}
+    <div className="carousel-wrapper" style={{ backgroundColor: slides[current].bgColor }}>
+      <div className="carousel-slide">
+        <img src={slides[current].image} alt={slides[current].title} />
+        <div className="carousel-text">
+          <h1>{slides[current].title}</h1>
+          <p>{slides[current].subtitle}</p>
         </div>
       </div>
-      <div className="hero-content" style={{ textAlign: 'center', marginTop: '2rem' }}>
-        <h1>Empowering Rural Talent for a Brighter Tomorrow</h1>
-        <p style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
-          Join a unified platform where rural students access competitive exams, scholarships, and expert guidance — all in one place.
-        </p>
+
+      <div className="carousel-dots">
+        {slides.map((_, idx) => (
+          <span
+            key={idx}
+            className={`dot${current === idx ? ' active' : ''}`}
+            onClick={() => setCurrent(idx)}
+          />
+        ))}
       </div>
     </div>
   );
